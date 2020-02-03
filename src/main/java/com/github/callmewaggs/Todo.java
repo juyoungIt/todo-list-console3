@@ -47,9 +47,9 @@ public class Todo {
     return finishAt;
   }
 
-  public void update(String content, List<Todo> dependencies) {
+  public void update(String content, List<Todo> parents) {
     this.content = content;
-    this.parents = dependencies;
+    this.parents = parents;
     this.updateAt = LocalDateTime.now();
   }
 
