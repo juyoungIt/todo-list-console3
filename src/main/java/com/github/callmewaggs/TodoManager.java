@@ -46,4 +46,8 @@ public class TodoManager {
     Todo toBeFinished = todoRepository.find(id);
     toBeFinished.finish();
   }
+
+  public List<Todo> getAllTodos() {
+    return todoRepository.findAll();
+  }
 }

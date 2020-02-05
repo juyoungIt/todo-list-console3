@@ -22,6 +22,10 @@ public class TodoRepository {
         .orElseThrow(() -> new IllegalStateException("잘못된 id가 입력되었습니다. id를 다시 확인해 주세요."));
   }
 
+  public List<Todo> findAll() {
+    return todoList;
+  }
+
   public List<Todo> findAll(List<Long> ids) {
     List<Todo> todos = new ArrayList<>();
     for (long id : ids) {
