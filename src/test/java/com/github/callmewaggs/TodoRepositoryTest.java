@@ -69,6 +69,24 @@ public class TodoRepositoryTest {
     assertEquals("잘못된 id가 입력되었습니다. id를 다시 확인해 주세요.", actual.getMessage());
   }
 
+  @DisplayName("할 일을 모두 리스트로 반환한다.")
+  @Test
+  public void find_all_of_todo_objects() {
+    // Arrange
+    Todo todo1 = new Todo(1, "할 일1", new ArrayList<>());
+    Todo todo2 = new Todo(2, "할 일2", new ArrayList<>());
+    todoRepository.add(todo1);
+    todoRepository.add(todo2);
+
+    // Act
+    List<Todo> todos = todoRepository.findAll();
+
+    // Assert
+    assertTrue(todos.stream().anyMatch(e -> e.equals(todo1)));
+    assertTrue(todos.stream().anyMatch(e -> e.equals(todo2)));
+    assertEquals(2, todos.size());
+  }
+
   @DisplayName("여러 id에 대해 일치하는 할 일을 모두 찾아 리스트로 반환한다.")
   @Test
   public void find_all_of_input_id_list_and_return_its_todo_objects_list() {

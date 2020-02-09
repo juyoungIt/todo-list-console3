@@ -7,19 +7,19 @@ import java.util.stream.Collectors;
 
 public class IOHelper {
 
-  private static Scanner scanner = new Scanner(System.in);
-  private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+  private Scanner scanner = new Scanner(System.in);
+  private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-  public static void printHelloMessage() {
+  public void printHelloMessage() {
     System.out.println("TODO LIST CONSOLE APPLICATION - Todo editor");
   }
 
-  public static void printMenuWithExample() {
+  public void printMenuWithExample() {
     printMenu();
     printExample();
   }
 
-  public static void printMenu() {
+  public void printMenu() {
     System.out.println("  MENU");
     System.out.println("  1: show TODO list");
     System.out.println("  2: create TODO");
@@ -29,7 +29,7 @@ public class IOHelper {
     System.out.println("  0: exit\n");
   }
 
-  public static void printExample() {
+  public void printExample() {
     System.out.println("  EXAMPLE");
     System.out.println("  1<Enter>");
     System.out.println("  2 {content} [dependencies]<Enter>");
@@ -39,28 +39,31 @@ public class IOHelper {
     System.out.println("  dependencies must be written with @ (ex. @1)\n");
   }
 
-  public static String inputCommand() {
+  public String inputCommand() {
     System.out.print("$ ");
     return scanner.nextLine();
   }
 
-  public static void printTodoList(List<Todo> todoList) {
+  public void printTodoList(List<Todo> todoList) {
     System.out.println("| id | content | 작성일시 | 최종수정일시 | 완료처리 |");
     for (Todo todo : todoList) {
       String information =
-          String.join(" | ", String.valueOf(todo.getId()), getContentWithDependencies(todo),
+          String.join(
+              " | ",
+              String.valueOf(todo.getId()),
+              getContentWithDependencies(todo),
               getTimes(todo));
       System.out.println("| " + information + " |");
     }
   }
 
-  private static String getContentWithDependencies(Todo todo) {
+  private String getContentWithDependencies(Todo todo) {
     String dependencies =
         todo.getParents().stream().map(e -> "@" + e.getId()).collect(Collectors.joining(" "));
     return String.join(" ", todo.getContent(), dependencies).trim();
   }
 
-  private static String getTimes(Todo todo) {
+  private String getTimes(Todo todo) {
     return String.join(
         " | ",
         todo.getCreateAt() == null ? null : todo.getCreateAt().format(formatter),
@@ -68,7 +71,7 @@ public class IOHelper {
         todo.getFinishAt() == null ? null : todo.getCreateAt().format(formatter));
   }
 
-  public static void printMessage(String message) {
+  public void printMessage(String message) {
     System.out.println(message);
   }
 }
