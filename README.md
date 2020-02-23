@@ -4,7 +4,7 @@
 ![todo-list-console3](https://user-images.githubusercontent.com/35681772/73604203-0eadb280-45d0-11ea-94e2-cf901df5c92a.gif)
 
 공부하기 위한 TODO list 콘솔 어플리케이션.
-기존에 개발했던 어플리케이션을 피드백을 바탕으로 개선하여 3번째 다시 개발함.
+기존에 개발했던 어플리케이션을 피드백을 바탕으로 개선하여 3번째 다시 개발함. 
 
 ## 기술 스택
  * Java(version: '12.0.1')
