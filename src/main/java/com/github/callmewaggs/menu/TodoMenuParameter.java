@@ -1,4 +1,4 @@
-package com.github.callmewaggs;
+package com.github.callmewaggs.menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class TodoMenuParameter {
     this.parentIds = parentIds;
   }
 
-  static TodoMenuParameter parse(String input) {
+  public static TodoMenuParameter parse(String input) {
     String[] parsed = input.split(" ");
     TodoMenu menu = TodoMenu.fromMenuNumber(parsed[0]);
     switch (menu) {

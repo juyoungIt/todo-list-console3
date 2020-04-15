@@ -1,4 +1,4 @@
-package com.github.callmewaggs;
+package com.github.callmewaggs.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;

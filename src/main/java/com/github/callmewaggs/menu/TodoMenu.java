@@ -1,4 +1,4 @@
-package com.github.callmewaggs;
+package com.github.callmewaggs.menu;
 
 import java.util.Arrays;
 import java.util.Optional;

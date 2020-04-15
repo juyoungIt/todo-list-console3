@@ -1,10 +1,9 @@
 package com.github.callmewaggs.processor;
 
-import com.github.callmewaggs.IdGenerator;
-import com.github.callmewaggs.Todo;
-import com.github.callmewaggs.TodoMenuParameter;
-import com.github.callmewaggs.TodoMenuProcessor;
-import com.github.callmewaggs.TodoRepository;
+import com.github.callmewaggs.domain.IdGenerator;
+import com.github.callmewaggs.domain.Todo;
+import com.github.callmewaggs.domain.TodoRepository;
+import com.github.callmewaggs.menu.TodoMenuParameter;
 import java.util.List;
 
 public class TodoCreateMenuProcessor implements TodoMenuProcessor {

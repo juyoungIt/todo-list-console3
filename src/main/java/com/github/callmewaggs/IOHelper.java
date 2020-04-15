@@ -1,5 +1,6 @@
 package com.github.callmewaggs;
 
+import com.github.callmewaggs.domain.Todo;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;

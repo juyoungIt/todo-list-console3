@@ -1,5 +1,9 @@
 package com.github.callmewaggs;
 
+import com.github.callmewaggs.domain.TodoRepository;
+import com.github.callmewaggs.menu.TodoMenu;
+import com.github.callmewaggs.menu.TodoMenuParameter;
+import com.github.callmewaggs.processor.TodoMenuProcessor;
 import java.util.Map;
 
 public class TodoListConsole {

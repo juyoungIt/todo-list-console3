@@ -8,10 +8,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.github.callmewaggs.Todo;
-import com.github.callmewaggs.TodoMenu;
-import com.github.callmewaggs.TodoMenuParameter;
-import com.github.callmewaggs.TodoRepository;
+import com.github.callmewaggs.domain.Todo;
+import com.github.callmewaggs.domain.TodoRepository;
+import com.github.callmewaggs.menu.TodoMenu;
+import com.github.callmewaggs.menu.TodoMenuParameter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
