@@ -18,15 +18,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-public class TodoRemoveMenuProcessorTest {
+public class TodoRemoveProcessorTest {
 
-  private TodoRemoveMenuProcessor todoRemoveMenuProcessor;
+  private TodoRemoveProcessor todoRemoveMenuProcessor;
   private TodoRepository todoRepository;
 
   @Before
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
-    this.todoRemoveMenuProcessor = new TodoRemoveMenuProcessor(todoRepository);
+    this.todoRemoveMenuProcessor = new TodoRemoveProcessor(todoRepository);
   }
 
   @DisplayName("삭제할 할 일의 id를 입력 받아 할 일을 삭제한다.")

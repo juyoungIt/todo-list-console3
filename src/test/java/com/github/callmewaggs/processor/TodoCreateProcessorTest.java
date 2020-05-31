@@ -16,9 +16,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-public class TodoCreateMenuProcessorTest {
+public class TodoCreateProcessorTest {
 
-  private TodoCreateMenuProcessor todoCreateMenuProcessor;
+  private TodoCreateProcessor todoCreateMenuProcessor;
   private TodoRepository todoRepository;
   private IdGenerator idGenerator;
 
@@ -26,7 +26,7 @@ public class TodoCreateMenuProcessorTest {
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
     this.idGenerator = mock(IdGenerator.class);
-    this.todoCreateMenuProcessor = new TodoCreateMenuProcessor(todoRepository, idGenerator);
+    this.todoCreateMenuProcessor = new TodoCreateProcessor(todoRepository, idGenerator);
   }
 
   @DisplayName("할 일을 생성한다.")

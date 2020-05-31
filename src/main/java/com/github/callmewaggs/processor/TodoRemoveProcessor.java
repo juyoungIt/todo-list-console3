@@ -5,11 +5,11 @@ import com.github.callmewaggs.domain.TodoRepository;
 import com.github.callmewaggs.menu.TodoMenuParameter;
 import java.util.List;
 
-public class TodoRemoveMenuProcessor implements TodoMenuProcessor {
+public class TodoRemoveProcessor implements TodoProcessor {
 
   private TodoRepository todoRepository;
 
-  public TodoRemoveMenuProcessor(TodoRepository todoRepository) {
+  public TodoRemoveProcessor(TodoRepository todoRepository) {
     this.todoRepository = todoRepository;
   }
 

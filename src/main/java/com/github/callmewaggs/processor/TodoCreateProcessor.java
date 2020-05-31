@@ -6,12 +6,12 @@ import com.github.callmewaggs.domain.TodoRepository;
 import com.github.callmewaggs.menu.TodoMenuParameter;
 import java.util.List;
 
-public class TodoCreateMenuProcessor implements TodoMenuProcessor {
+public class TodoCreateProcessor implements TodoProcessor {
 
   private TodoRepository todoRepository;
   private IdGenerator idGenerator;
 
-  public TodoCreateMenuProcessor(TodoRepository todoRepository, IdGenerator idGenerator) {
+  public TodoCreateProcessor(TodoRepository todoRepository, IdGenerator idGenerator) {
     this.todoRepository = todoRepository;
     this.idGenerator = idGenerator;
   }

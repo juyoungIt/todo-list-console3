@@ -17,15 +17,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-public class TodoFinishMenuProcessorTest {
+public class TodoFinishProcessorTest {
 
-  private TodoFinishMenuProcessor todoFinishMenuProcessor;
+  private TodoFinishProcessor todoFinishMenuProcessor;
   private TodoRepository todoRepository;
 
   @Before
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
-    this.todoFinishMenuProcessor = new TodoFinishMenuProcessor(todoRepository);
+    this.todoFinishMenuProcessor = new TodoFinishProcessor(todoRepository);
   }
 
   @DisplayName("완료할 할 일의 id를 입력 받아 할 일을 완료한다.")

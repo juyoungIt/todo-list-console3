@@ -3,17 +3,17 @@ package com.github.callmewaggs;
 import com.github.callmewaggs.domain.TodoRepository;
 import com.github.callmewaggs.menu.TodoMenu;
 import com.github.callmewaggs.menu.TodoMenuParameter;
-import com.github.callmewaggs.processor.TodoMenuProcessor;
+import com.github.callmewaggs.processor.TodoProcessor;
 import java.util.Map;
 
 public class TodoListConsole {
 
-  private Map<TodoMenu, TodoMenuProcessor> todoProcessorMapping;
+  private Map<TodoMenu, TodoProcessor> todoProcessorMapping;
   private TodoRepository todoRepository;
   private IOHelper ioHelper;
 
   public TodoListConsole(
-      Map<TodoMenu, TodoMenuProcessor> todoProcessorMapping,
+      Map<TodoMenu, TodoProcessor> todoProcessorMapping,
       TodoRepository todoRepository,
       IOHelper ioHelper) {
     this.todoProcessorMapping = todoProcessorMapping;
@@ -35,8 +35,8 @@ public class TodoListConsole {
           ioHelper.printTodoList(todoRepository.findAll());
           continue;
         }
-        TodoMenuProcessor todoMenuProcessor = todoProcessorMapping.get(todoMenuParameter.getMenu());
-        todoMenuProcessor.run(todoMenuParameter);
+        TodoProcessor todoProcessor = todoProcessorMapping.get(todoMenuParameter.getMenu());
+        todoProcessor.run(todoMenuParameter);
         ioHelper.printTodoList(todoRepository.findAll());
       } catch (Exception e) {
         ioHelper.printMessage(e.getMessage());

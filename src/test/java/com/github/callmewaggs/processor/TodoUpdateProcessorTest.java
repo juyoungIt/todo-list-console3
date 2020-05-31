@@ -19,15 +19,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-public class TodoUpdateMenuProcessorTest {
+public class TodoUpdateProcessorTest {
 
-  private TodoUpdateMenuProcessor todoUpdateMenuProcessor;
+  private TodoUpdateProcessor todoUpdateMenuProcessor;
   private TodoRepository todoRepository;
 
   @Before
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
-    this.todoUpdateMenuProcessor = new TodoUpdateMenuProcessor(todoRepository);
+    this.todoUpdateMenuProcessor = new TodoUpdateProcessor(todoRepository);
   }
 
   @DisplayName("할 일은 내용과 의존성을 수정할 수 있다.")
