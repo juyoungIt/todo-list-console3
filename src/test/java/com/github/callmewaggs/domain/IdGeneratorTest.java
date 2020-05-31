@@ -1,8 +1,7 @@
-package com.github.callmewaggs;
+package com.github.callmewaggs.domain;
 
 import static org.junit.Assert.assertEquals;
 
-import com.github.callmewaggs.domain.IdGenerator;
 import org.junit.Test;
 
 public class IdGeneratorTest {

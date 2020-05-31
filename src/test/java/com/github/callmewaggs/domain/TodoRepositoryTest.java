@@ -1,11 +1,9 @@
-package com.github.callmewaggs;
+package com.github.callmewaggs.domain;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.github.callmewaggs.domain.Todo;
-import com.github.callmewaggs.domain.TodoRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,12 +1,10 @@
-package com.github.callmewaggs;
+package com.github.callmewaggs.menu;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.github.callmewaggs.menu.TodoMenu;
-import com.github.callmewaggs.menu.TodoMenuParameter;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
