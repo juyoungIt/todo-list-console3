@@ -177,12 +177,13 @@ __Junit__ 은 자바용 단위 테스트 작성을 위한 프레임워크 입니
  - 자바 8 이상 버전 요구
  
 테스트 코드를 작성하며 마주한 어려움으로 __private method 에 대한 test__ 를 어떻게 해야할 지 몰랐었습니다.
-그래서 [다음과 같은 방법](https://stackoverflow.com/questions/34571/how-do-i-test-a-private-function-or-a-class-that-has-private-methods-fields-or)
-으로 해결이 가능하다는 것을 확인했습니다.
+그래서 다음과 같은 방법으로 해결이 가능하다는 것을 확인했습니다.
  - private method 를 호출하는 public method 를 테스트 함으로써 해결
  - Reflection 을 활용 하여 해결
  - Spock 테스트 프레임워크 사용
- 
+
+> 출처 : https://stackoverflow.com/questions/34571/how-do-i-test-a-private-function-or-a-class-that-has-private-methods-fields-or
+
 위 프로젝트에서는 첫 번째 방법으로 해결하였습니다.
 
 Reflection 이란 객체를 통해 클래스의 정보를 분석해 내는 프로그램 기법인데, 생소하고 내용이 어려워 완벽히 이해되지 않았습니다.
