@@ -65,6 +65,8 @@ TDD 에 익숙해 지기 위해, OOP 의 관점에서 생각해 보기 위해 �
  
 ## Todo-list-console 아키텍처
 
+<img width="1072" alt="Screen Shot 2020-06-01 at 4 18 07 PM" src="https://user-images.githubusercontent.com/35681772/83385078-83301b00-a423-11ea-8cdb-0d426b6a7d3c.png">
+
 Todo-list-console 은 OOP(Object-Oriented Programming) 의 관점에서 개발하려고 노력했습니다. 
 또한 콘솔 단과 비즈니스 로직을 분리하여 추후에 이것이 웹 프로젝트로 변경되더라도 도메인은 변화가 없도록 설계하였습니다.
 
@@ -74,6 +76,11 @@ Todo-list-console 은 OOP(Object-Oriented Programming) 의 관점에서 개발�
  * TodoListConsole : 실행 가능한 기능들을 사용자의 입력과 매핑시켜 적절한 processor 를 실행시킵니다.
  Processor 구현에 있어 종료와 리스트를 보여주는 기능을 Processor 로 함께 제공하려 했으나, 
  의존관계가 엮여 있어 if 문으로 처리한 점이 아쉽습니다.  
+
+<img width="550" alt="Screen Shot 2020-06-01 at 4 02 15 PM" src="https://user-images.githubusercontent.com/35681772/83384122-8d511a00-a421-11ea-9624-76a474c09856.png">
+
+> 개인적으로 아쉬웠던 구현
+
  * IOHelper : 콘솔 단에서의 I/O 에 관한 모든 기능을 담당합니다. 
  따로 I/O 만을 담당하는 객체를 두어 비즈니스 로직에 불필요한 입출력 관련 코드가 섞이지 않도록 설계하였습니다. 
 
@@ -147,14 +154,16 @@ Todo-list-console 은 OOP(Object-Oriented Programming) 의 관점에서 개발�
 
 ## Achievement
 
-<img width="492" alt="Screen Shot 2020-05-31 at 9 39 52 PM" src="https://user-images.githubusercontent.com/35681772/83352573-61815600-a387-11ea-8b4c-63271cd45b4b.png">
+<img width="505" alt="Screen Shot 2020-06-01 at 4 21 26 PM" src="https://user-images.githubusercontent.com/35681772/83385318-f6d22800-a423-11ea-82c1-21063f395f4e.png">
 
-> Unreachable 한 switch-case 문에서의 default 영역과 콘솔 단의 I/O 코드를 제외하고 Test Coverage 100% 도달
+> Unreachable 한 switch-case 문에서의 default 영역과 콘솔 단의 I/O 코드를 제외하고 Test Coverage 100%
 
 위 프로젝트에서 Switch-Case 문을 사용하였는데, enum 문으로 분기가 나뉘기 때문에 enum 의 valueOf 역할을 하는 함수에서 예외를 잡도록 구현했습니다. 
 그래서 잘못된 분기로 빠질 여지가 없어 default block 에는 도달할 수 없습니다.
 또한 콘솔 단의 I/O 에 관련된 코드는 직접 입력하거나 실행하여 눈으로 확인할 수 있어 별 다른 테스트 코드를 작성하지 않았습니다. 
 이를 제외하고 테스트 커버리지를 100%로 맞춰 __작성한 코드의 기능이 예상한 대로 작동할 것이라 자신감__ 을 얻을 수 있었습니다.
+
+또한, __발생 가능한 예외들에 대한 충분한 고민을 할 수 있어__ 구현을 먼저 했다면 미흡했을 수 있는 예외 처리에 있어 보다 꼼꼼하게 점검할 수 있었습니다.
 
 처음엔 테스트 코드 작성이 익숙하지 않아 어떤 것을 어떻게 테스트 해야 할 지 몰랐었으나, 
 프로젝트에 필요한 __기능 목록__ 을 구체적으로 작성하고 기능 별로 테스트 코드를 작성하는 방식으로 이를 개선했습니다.
@@ -175,7 +184,7 @@ __Junit__ 은 자바용 단위 테스트 작성을 위한 프레임워크 입니
  - 테스트 작성자를 위한 API 모듈과 테스트 실행을 위한 API가 분리되어 있다.
    * 예를 들어, JUnit Jupiter는 테스트 코드 작성에 필요한 junit-jupiter-api 모듈과 테스트 실행을 위한 junit-jupiter-engine 모듈로 분리되어 있다.
  - 자바 8 이상 버전 요구
- 
+
 테스트 코드를 작성하며 마주한 어려움으로 __private method 에 대한 test__ 를 어떻게 해야할 지 몰랐었습니다.
 그래서 다음과 같은 방법으로 해결이 가능하다는 것을 확인했습니다.
  - private method 를 호출하는 public method 를 테스트 함으로써 해결
