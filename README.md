@@ -65,7 +65,8 @@ TDD 에 익숙해 지기 위해, OOP 의 관점에서 생각해 보기 위해 �
  
 ## Todo-list-console 아키텍처
 
-<img width="1072" alt="Screen Shot 2020-06-01 at 4 18 07 PM" src="https://user-images.githubusercontent.com/35681772/83385078-83301b00-a423-11ea-8cdb-0d426b6a7d3c.png">
+<img width="1057" alt="Screen Shot 2020-06-01 at 4 24 46 PM" src="https://user-images.githubusercontent.com/35681772/83385575-79f37e00-a424-11ea-9d22-53138d51f10c.png">
+
 
 Todo-list-console 은 OOP(Object-Oriented Programming) 의 관점에서 개발하려고 노력했습니다. 
 또한 콘솔 단과 비즈니스 로직을 분리하여 추후에 이것이 웹 프로젝트로 변경되더라도 도메인은 변화가 없도록 설계하였습니다.
