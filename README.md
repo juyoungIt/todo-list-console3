@@ -179,12 +179,14 @@ __Junit__ 은 자바용 단위 테스트 작성을 위한 프레임워크 입니
 
 #### JUnit 4
  - All in One, 단일 jar
- 
+
+![junit5](https://user-images.githubusercontent.com/35681772/83387030-00a95a80-a427-11ea-892b-79810d8b8e22.png)
+
 #### JUnit 5
  - JUnit Platform, JUnit Jupiter, JUnit Vintage 모듈로 구성되어 있습니다. 
- - 테스트 작성자를 위한 API 모듈과 테스트 실행을 위한 API가 분리되어 있다.
-   * 예를 들어, JUnit Jupiter는 테스트 코드 작성에 필요한 junit-jupiter-api 모듈과 테스트 실행을 위한 junit-jupiter-engine 모듈로 분리되어 있다.
- - 자바 8 이상 버전 요구
+ - __JUnit  Platform__ : 테스트를 발견하고 테스트 계획을 생성하는 TestEngine 인터페이스를 가지고 있습니다. Platform은 TestEngine을 통해서 테스트를 발견하고, 실행하고, 결과를 보고합니다.
+ - __JUnit Jupiter__ : TestEngine의 실제 구현체는 별도 모듈입니다. 모듈 중 하나가 jupiter-engine입니다. 이 모듈은 jupiter-api를 사용해서 작성한 테스트 코드를 발견하고 실행합니다. Jupiter API는 JUnit 5에 새롭게 추가된 테스트 코드용 API로서, 개발자는 Jupiter API를 사용해서 테스트 코드를 작성할 수 있습니다.
+ - __JUnit Vintage__ : 기존에 JUnit 4 버전으로 작성한 테스트 코드를 실행할 때에는 vintage-engine 모듈을 사용합니다.
 
 테스트 코드를 작성하며 마주한 어려움으로 __private method 에 대한 test__ 를 어떻게 해야할 지 몰랐었습니다.
 그래서 다음과 같은 방법으로 해결이 가능하다는 것을 확인했습니다.
