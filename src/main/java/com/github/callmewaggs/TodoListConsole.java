@@ -21,21 +21,22 @@ public class TodoListConsole {
     this.ioHelper = ioHelper;
   }
 
-  public void start() {
+  void start() {
     ioHelper.printHelloMessage();
     ioHelper.printMenuWithExample();
     while (true) {
       try {
         String input = ioHelper.inputCommand();
         TodoMenuParameter todoMenuParameter = TodoMenuParameter.parse(input);
-        if (todoMenuParameter.getMenu() == TodoMenu.QUIT) {
+        TodoMenu menu = todoMenuParameter.getMenu();
+        if (menu == TodoMenu.QUIT) {
           break;
         }
-        if (todoMenuParameter.getMenu() == TodoMenu.SHOW_LIST) {
+        if (menu == TodoMenu.SHOW_LIST) {
           ioHelper.printTodoList(todoRepository.findAll());
           continue;
         }
-        TodoProcessor todoProcessor = todoProcessorMapping.get(todoMenuParameter.getMenu());
+        TodoProcessor todoProcessor = todoProcessorMapping.get(menu);
         todoProcessor.run(todoMenuParameter);
         ioHelper.printTodoList(todoRepository.findAll());
       } catch (Exception e) {
