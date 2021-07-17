@@ -7,6 +7,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.github.callmewaggs.domain.Hist_idGenerator;
+import com.github.callmewaggs.domain.HistoryRepository;
 import com.github.callmewaggs.domain.Todo;
 import com.github.callmewaggs.domain.TodoRepository;
 import com.github.callmewaggs.menu.TodoMenu;
@@ -21,11 +23,17 @@ public class TodoFinishProcessorTest {
 
   private TodoFinishProcessor todoFinishMenuProcessor;
   private TodoRepository todoRepository;
+  private HistoryRepository historyRepository;
+  private Hist_idGenerator hist_idGenerator;
 
   @Before
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
-    this.todoFinishMenuProcessor = new TodoFinishProcessor(todoRepository);
+    this.todoFinishMenuProcessor = new TodoFinishProcessor(
+    		todoRepository,
+    		historyRepository,
+    		hist_idGenerator);
+    this.historyRepository = mock(HistoryRepository.class);
   }
 
   @DisplayName("완료할 할 일의 id를 입력 받아 할 일을 완료한다.")

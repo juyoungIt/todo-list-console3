@@ -18,7 +18,7 @@ public class TodoRepositoryTest {
 
   @Before
   public void setup() {
-    todoRepository = new TodoRepository();
+    todoRepository = TodoRepository.getInstance();
   }
 
   @DisplayName("새로운 할 일을 리스트에 추가한다.")

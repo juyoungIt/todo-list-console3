@@ -21,6 +21,17 @@ public class Todo {
     this.createAt = LocalDateTime.now();
     this.parents = parents;
   }
+  
+  // load and add Todo data to repository (through json file parsing)
+  public Todo(long id, String content, List<Todo> parents, LocalDateTime createAt, LocalDateTime updateAt, LocalDateTime finishAt) {
+	  this.id = id;
+	  this.content = content;
+	  this.parents = parents;
+	  this.createAt = createAt;
+	  this.updateAt = updateAt;
+	  this.finishAt = finishAt;
+	  // need deep copy technique here???
+  }
 
   public long getId() {
     return id;

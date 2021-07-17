@@ -8,7 +8,7 @@ public class IdGeneratorTest {
 
   @Test
   public void generate_test() {
-    IdGenerator idGenerator = new IdGenerator();
+    IdGenerator idGenerator = IdGenerator.getInstance();
     for (int i = 1; i < 10000; ++i) {
       assertEquals(i, idGenerator.generate());
     }

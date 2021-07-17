@@ -5,6 +5,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.github.callmewaggs.domain.Hist_idGenerator;
+import com.github.callmewaggs.domain.HistoryRepository;
 import com.github.callmewaggs.domain.IdGenerator;
 import com.github.callmewaggs.domain.Todo;
 import com.github.callmewaggs.domain.TodoRepository;
@@ -20,13 +22,19 @@ public class TodoCreateProcessorTest {
 
   private TodoCreateProcessor todoCreateMenuProcessor;
   private TodoRepository todoRepository;
+  private HistoryRepository historyRepository;
   private IdGenerator idGenerator;
+  private Hist_idGenerator hist_idGenerator;
 
   @Before
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
     this.idGenerator = mock(IdGenerator.class);
-    this.todoCreateMenuProcessor = new TodoCreateProcessor(todoRepository, idGenerator);
+    this.todoCreateMenuProcessor = new TodoCreateProcessor(
+    		todoRepository, 
+    		historyRepository,
+    		idGenerator,
+    		hist_idGenerator);
   }
 
   @DisplayName("할 일을 생성한다.")

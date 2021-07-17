@@ -8,6 +8,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.github.callmewaggs.domain.Hist_idGenerator;
+import com.github.callmewaggs.domain.HistoryRepository;
 import com.github.callmewaggs.domain.Todo;
 import com.github.callmewaggs.domain.TodoRepository;
 import com.github.callmewaggs.menu.TodoMenu;
@@ -23,11 +25,16 @@ public class TodoUpdateProcessorTest {
 
   private TodoUpdateProcessor todoUpdateMenuProcessor;
   private TodoRepository todoRepository;
+  private HistoryRepository historyRepository;
+  private Hist_idGenerator hist_idGenerator;
 
   @Before
   public void setup() {
     this.todoRepository = mock(TodoRepository.class);
-    this.todoUpdateMenuProcessor = new TodoUpdateProcessor(todoRepository);
+    this.todoUpdateMenuProcessor = new TodoUpdateProcessor(
+    		todoRepository,
+    		historyRepository,
+    		hist_idGenerator);
   }
 
   @DisplayName("할 일은 내용과 의존성을 수정할 수 있다.")

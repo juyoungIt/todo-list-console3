@@ -13,15 +13,24 @@ public enum TodoMenu {
   UPDATE("3"),
 
   REMOVE("4"),
+  
+  HISTORY("5"),
+  
+  FINISH("6"),
+  
+  SAVE("7"),
+  
+  LOAD("8");
 
-  FINISH("5");
+  
+  private String menuNumber; // the menu number from the users
 
-  private String menuNumber;
-
+  // constructor
   TodoMenu(String menuNumber) {
     this.menuNumber = menuNumber;
   }
 
+  // search the menu and return the option name
   public static TodoMenu fromMenuNumber(String menuNumber) {
     Optional<TodoMenu> todoMenu =
         Arrays.stream(TodoMenu.values()).filter(e -> e.menuNumber.equals(menuNumber)).findAny();
